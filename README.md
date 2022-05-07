@@ -60,6 +60,33 @@ $ RUST_LOG= cargo run --release
 wink@3900x 22-05-06T23:23:21.765Z:~/prgs/rust/myrepos/expr-std-channels (main)
 ```
 
+## Benchmark
+
+Uses [criteron](https://github.com/bheisler/criterion.rs) and
+[cargo-criteron](https://github.com/bheisler/cargo-criterion)
+
+Run as follows:
+```
+wink@3900x 22-05-07T04:43:59.812Z:~/prgs/rust/myrepos/expr-std-channels (main)
+$ cargo criterion
+    Finished bench [optimized] target(s) in 0.02s
+  Executable benches src/main.rs (target/release/deps/expr_std_channels-ee851714f51f4702)
+  Executable benches/bench1.rs (target/release/deps/bench1-b809171e5af3a4d3)
+Gnuplot not found, using plotters backend
+volatile_write          time:   [219.24 ps 219.46 ps 219.73 ps]                           
+                        change: [-3.0932% -2.9527% -2.8055%] (p = 0.00 < 0.05)
+                        Performance has improved.
+
+fn_to_fn                time:   [22.511 ns 22.548 ns 22.593 ns]                      
+                        change: [-4.3058% -3.9640% -3.6523%] (p = 0.00 < 0.05)
+                        Performance has improved.
+
+wink@3900x 22-05-07T04:44:22.283Z:~/prgs/rust/myrepos/expr-std-channels (main
+```
+
+On my system the html report is avaiable at
+file:///home/wink/prgs/rust/myrepos/expr-std-channels/target/criteron/report/index.html
+
 ## License
 
 Licensed under either of

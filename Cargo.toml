@@ -9,3 +9,10 @@ edition = "2021"
 env_logger = "0.9.0"
 humantime = "2.1.0"
 log = "0.4.17"
+
+[dev-dependencies]
+criterion = "0.3.5"
+
+[[bench]]
+name = "bench1"
+harness = false
